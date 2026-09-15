@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="form-container">
+        <form id="registrationForm" novalidate>
+            <h1>Create Account</h1>
+            <p class="subtitle">Register to get started</p>
+
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" autocomplete="name" required>
+                <small class="error" id="nameError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" autocomplete="email" required>
+                <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your 10-digit phone number" autocomplete="tel" required>
+                <small class="error" id="phoneError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password" required>
+
+                <div class="strength-container" aria-hidden="true">
+                    <div id="strengthBar"></div>
+                </div>
+                <p id="strengthText" class="strength-text" aria-live="polite"></p>
+
+                <ul id="passwordRequirements" class="requirements">
+                    <li id="length">At least 8 characters</li>
+                    <li id="uppercase">One uppercase letter</li>
+                    <li id="lowercase">One lowercase letter</li>
+                    <li id="number">One number</li>
+                    <li id="special">One special character</li>
+                </ul>
+                <small class="error" id="passwordError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" required>
+                <small class="error" id="confirmPasswordError"></small>
+            </div>
+
+            <label class="terms">
+                <input type="checkbox" id="terms" required>
+                <span>I agree to the terms and conditions</span>
+            </label>
+            <small class="error" id="termsError"></small>
+
+            <button type="submit">Register</button>
+            <p id="successMessage" class="success" aria-live="polite"></p>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
